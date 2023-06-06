@@ -17,6 +17,19 @@ function App() {
     }
   };
 
+  const addNewRandomContact = () => {
+    const remainingContacts = contacts.filter(
+      contact => !contactList.includes(contact)
+    );
+
+    if (remainingContacts.length > 0) {
+      const randomIndex = Math.floor(Math.random() * remainingContacts.length);
+      const randomContact = remainingContacts[randomIndex];
+
+      setContactList(prevContacts => [...prevContacts, randomContact]);
+    }
+  };
+
   const sortContactsByName = () => {
     const sortedContacts = contactList.sort((a, b) => {
       return a.name.localeCompare(b.name);
@@ -45,7 +58,7 @@ function App() {
     <div className="App">
       <h2>IronContacts</h2>
       <div className="buttons">
-        <button>Add Random Contact</button>
+        <button onClick={addNewRandomContact}>Add Random Contact</button>
         <button onClick={sortContactsByPopularity}>Sort by Popularity</button>
         <button onClick={sortContactsByName}>Sort by Name</button>
       </div>
