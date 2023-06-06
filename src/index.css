@@ -12,15 +12,9 @@ code {
     monospace;
 }
 
-.buttons {
+.btn {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-
-button {
-  width: 10rem;
-  height: 2rem;
-  margin: 2rem 1rem;
+  margin: 0 1rem;
+  justify-content: center;
 }
